@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "79568214412",
+    "firebase_url": "https://quanlynhahang-42f0b-default-rtdb.firebaseio.com",
+    "project_id": "quanlynhahang-42f0b",
+    "storage_bucket": "quanlynhahang-42f0b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79568214412:android:7a3fe7f0e62682ffc3dea9",
+        "android_client_info": {
+          "package_name": "vn.tlu.k64httt4.nhom24.quanlynhahang"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFPS4iJztUZp43Wa7O7xSANWNDdthDMQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79568214412:android:7cde2e5d5742088dc3dea9",
+        "android_client_info": {
+          "package_name": "vn.tlu.k64httt4.nhom24.udqlnhahangorderzone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFPS4iJztUZp43Wa7O7xSANWNDdthDMQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
