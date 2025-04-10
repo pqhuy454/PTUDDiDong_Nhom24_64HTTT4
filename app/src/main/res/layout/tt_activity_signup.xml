@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Phần 1: Hình ảnh minh họa -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_logo" />
+    </LinearLayout>
+
+    <!-- Phần 2: Văn bản tiêu đề và mô tả -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:text="BẮT ĐẦU"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="bằng cách tạo một tài khoản miễn phí."
+            android:textColor="#666666"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Phần 3: Các trường nhập liệu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+        <!-- Trường nhập Tên -->
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_person"
+            android:drawablePadding="8dp"
+            android:hint="Họ Tên"
+            android:padding="12dp"
+            app:drawableTint="@android:color/black" />
+        <!-- Trường nhập Email -->
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_email"
+            android:drawablePadding="8dp"
+            android:hint="Email"
+            android:padding="12dp"
+            app:drawableTint="@android:color/black" />
+        <!-- Trường nhập Số điện thoại -->
+        <EditText
+            android:id="@+id/edtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_phone"
+            android:drawablePadding="8dp"
+            android:hint="Số điện thoại"
+            android:inputType="phone"
+            android:padding="12dp"
+            app:drawableTint="@android:color/black" />
+        <!-- Trường nhập Mật khẩu -->
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_lock"
+            android:drawablePadding="8dp"
+            android:hint="Mật khẩu"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            app:drawableTint="@android:color/black" />
+        <!-- Trường nhập lại Mật khẩu -->
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableEnd="@drawable/ic_lock"
+            android:drawablePadding="8dp"
+            android:hint="Nhập lại mật khẩu"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            app:drawableTint="@android:color/black" />
+    </LinearLayout>
+
+    <!-- Spacer để đẩy các phần dưới xuống -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Phần 4: Nút Đăng ký -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF6200"
+            android:padding="12dp"
+            android:text="Đăng ký"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Phần 5: Liên kết Đăng nhập -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn đã có tài khoản? Đăng nhập ngay"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -13,7 +13,19 @@
         android:theme="@style/Theme.UDQLNhaHangOrderZone"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.ttResetpasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ttForgotpassswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ttSignupActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.phMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ttLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
