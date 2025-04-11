@@ -13,6 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-C:\Users\DELL\AndroidStudioProjects\PTUDDiDong_Nhom24_64HTTT4\app\src\main\res\raw\service_account.json
-
-
+app/src/main/res/raw/service_account.json
