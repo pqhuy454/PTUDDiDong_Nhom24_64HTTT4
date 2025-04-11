@@ -59,6 +59,24 @@
         <activity
             android:name=".Activity.VoucherActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".Activity.paAddNoticeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.paOngoing"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.paPaymentActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".Activity.paMyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".Activity.ttLoginActivity"
             android:exported="true">

@@ -41,7 +41,7 @@ public class phMainActivity extends AppCompatActivity {
                     return false;
                 }
             } else if (itemId == R.id.nav_notification) {
-                selectedFragment = new phNotificationFragment();
+                selectedFragment = new paNotificationFragment();
             } else if (itemId == R.id.nav_info) {
                 selectedFragment = new phInfoFragment();
                 // Truyền thông tin người dùng vào phInfoFragment

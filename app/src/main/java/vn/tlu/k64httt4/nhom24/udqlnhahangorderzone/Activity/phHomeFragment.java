@@ -40,6 +40,12 @@ public class phHomeFragment extends Fragment {
 //            startActivity(intent);
 //        });
 
+        // Gán sự kiện click cho btnPay
+        btnPay.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), paOngoing.class);
+            startActivity(intent);
+        });
+
         // Lấy userInfo từ MainActivity
         if (getActivity() instanceof phMainActivity) {
             userInfo = ((phMainActivity) getActivity()).getUserInfo();
