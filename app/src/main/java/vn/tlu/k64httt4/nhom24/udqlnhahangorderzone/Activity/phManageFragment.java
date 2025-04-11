@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -18,8 +19,29 @@ public class phManageFragment extends Fragment {
         View view = inflater.inflate(R.layout.ph_fragment_manage, container, false);
 
         Button btnManageStaff = view.findViewById(R.id.btnManageStaff);
+        Button btnQuanLyThucDon = view.findViewById(R.id.btnQuanLyThucDon);
+
+        // Kiểm tra ánh xạ
+        if (btnManageStaff == null || btnQuanLyThucDon == null) {
+            Toast.makeText(getContext(), "Lỗi ánh xạ giao diện", Toast.LENGTH_LONG).show();
+            return view;
+        }
+
         btnManageStaff.setOnClickListener(v -> {
+            if (getActivity() == null) {
+                Toast.makeText(getContext(), "Lỗi context", Toast.LENGTH_SHORT).show();
+                return;
+            }
             Intent intent = new Intent(getActivity(), ttPersonnelManagementActivity.class);
+            startActivity(intent);
+        });
+
+        btnQuanLyThucDon.setOnClickListener(v -> {
+            if (getActivity() == null) {
+                Toast.makeText(getContext(), "Lỗi context", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Intent intent = new Intent(getActivity(), paQuanLyMenuActivity.class);
             startActivity(intent);
         });
 

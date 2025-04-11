@@ -47,6 +47,7 @@
 
         <!-- Nút Thanh toán -->
         <Button
+            android:id="@+id/btnQuanLyThucDon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Quản lý thực đơn"

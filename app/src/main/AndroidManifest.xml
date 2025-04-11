@@ -3,6 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.tlu.k64httt4.nhom24.udqlnhahangorderzone">
 
+    <!-- Quyền cho Android 12 trở xuống -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Quyền cho Android 13 trở lên -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <!-- Quyền kiểm tra kết nối mạng -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Quyền cần thiết -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -27,6 +43,15 @@
             android:exported="false" />
         <activity
             android:name=".Activity.phMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.paQuanLyMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.paSuaXoaMonAnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.paThemMonAnActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.ttLoginActivity"
