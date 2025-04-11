@@ -1,10 +1,13 @@
 package vn.tlu.k64httt4.nhom24.udqlnhahangorderzone.Adapter;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,10 +20,12 @@ import java.util.List;
 public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.VoucherViewHolder> {
     private List<Voucher> voucherList;
     private VoucherHelper voucherHelper;
+    private Activity activity; // Thêm biến Activity
 
-    public VoucherAdapter(List<Voucher> voucherList) {
+    public VoucherAdapter(List<Voucher> voucherList, Activity activity) {
         this.voucherList = voucherList;
         this.voucherHelper = new VoucherHelper();
+        this.activity = activity; // Khởi tạo Activity
     }
 
     @NonNull
@@ -41,11 +46,13 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.VoucherV
         holder.deleteBtn.setOnClickListener(v -> {
             voucherHelper.deleteVoucher(voucher.getId(),
                     () -> {
-                        // Xóa thành công, cập nhật UI nếu cần
+                        // Xóa thành công, cập nhật danh sách
+                        voucherList.remove(position);
+                        notifyItemRemoved(position);
+                        notifyItemRangeChanged(position, voucherList.size());
                     },
-                    error -> {
-                        // Xử lý lỗi
-                    });
+                    error -> activity.runOnUiThread(() -> // Sử dụng activity để chạy trên UI thread
+                            Toast.makeText(activity, "Lỗi khi xóa: " + error, Toast.LENGTH_SHORT).show()));
         });
     }
 

@@ -1,69 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="80dp">
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Voucher"
+        android:text="Thêm Voucher"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp"/>
 
     <EditText
         android:id="@+id/voucherIdInput"
-        android:layout_width="277dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ID" />
+        android:hint="ID Voucher"
+        android:inputType="text"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"/>
 
     <EditText
         android:id="@+id/voucherNameInput"
-        android:layout_width="277dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name" />
+        android:hint="Tên Món"
+        android:inputType="text"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"/>
 
     <EditText
         android:id="@+id/discountPercentInput"
-        android:layout_width="278dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Discount Percent"
-        android:inputType="number" />
+        android:hint="Phần trăm giảm giá"
+        android:inputType="numberDecimal"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"/>
 
     <EditText
         android:id="@+id/dayStartInput"
-        android:layout_width="277dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Day Start"
-        android:inputType="date" />
+        android:hint="Ngày bắt đầu (dd/mm/yyyy)"
+        android:inputType="text"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"/>
 
     <EditText
         android:id="@+id/dayEndInput"
-        android:layout_width="277dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Day End"
-        android:inputType="date" />
+        android:hint="Ngày kết thúc (dd/mm/yyyy)"
+        android:inputType="text"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp"/>
 
     <LinearLayout
-        android:layout_width="265dp"
-        android:layout_height="80dp"
-        android:gravity="end"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/saveBtn"
-            android:layout_width="111dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF5722"
-            android:text="Save" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
 
         <Button
             android:id="@+id/cancelBtn"
-            android:layout_width="115dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#B0BEC5"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="25dp"
-            android:text="Cancel" />
+            android:text="Hủy"
+            android:layout_marginEnd="8dp"/>
 
-    </LinearLayout> </LinearLayout>
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lưu"/>
+    </LinearLayout>
+</LinearLayout>
