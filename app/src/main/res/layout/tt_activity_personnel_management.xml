@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Header giống file bạn gửi -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            android:padding="4dp"
+            app:drawableTint="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quản lý nhân sự"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="12dp"/>
+    </LinearLayout>
+
+    <!-- EditText nhập email nhân viên -->
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerLayout"
+        android:layout_marginTop="16dp"
+        android:hint="Nhập email nhân viên"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"/>
+
+    <!-- Button Thêm email -->
+    <Button
+        android:id="@+id/btnAddEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thêm"
+        android:layout_below="@id/edtEmail"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/orange"
+        android:textColor="@android:color/white"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"/>
+
+    <!-- RecyclerView hiển thị danh sách email -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEmails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btnAddEmail"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp" />
+
+</RelativeLayout>

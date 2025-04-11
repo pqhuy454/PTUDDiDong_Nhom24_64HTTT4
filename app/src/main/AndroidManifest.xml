@@ -14,6 +14,9 @@
         android:theme="@style/Theme.UDQLNhaHangOrderZone"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.ttPersonnelManagementActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ttResetpasswordActivity"
             android:exported="false" />
         <activity
