@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/orange"
+        android:padding="16dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quản lý nhà hàng"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Nội dung chính -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Nút Order -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quản lý bàn"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/button_border" />
+
+        <!-- Nút Thanh toán -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quản lý thực đơn"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/button_border" />
+
+        <!-- Nút Quản lý nhân viên -->
+        <Button
+            android:id="@+id/btnManageStaff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quản lý nhân viên"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/button_border" />
+
+        <!-- Nút Mã giảm giá -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mã giảm giá"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/button_border" />
+
+        <!-- Nút Thống kê -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thống kê"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:stateListAnimator="@null"
+            android:foreground="@drawable/button_border" />
+    </LinearLayout>
+
+</LinearLayout>
