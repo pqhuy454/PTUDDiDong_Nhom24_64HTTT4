@@ -45,6 +45,19 @@ public class phManageFragment extends Fragment {
             startActivity(intent);
         });
 
+        Button btnManageTables = view.findViewById(R.id.btnManageTables);
+        btnManageTables.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ManageTablesActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnManageVoucher = view.findViewById(R.id.btnManageVouchers);
+        btnManageVoucher.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), VoucherActivity.class);
+            startActivity(intent);
+        });
+
+
         return view;
     }
 }

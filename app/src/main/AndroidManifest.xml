@@ -54,6 +54,12 @@
             android:name=".Activity.paThemMonAnActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.ManageTablesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.VoucherActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ttLoginActivity"
             android:exported="true">
             <intent-filter>

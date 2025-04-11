@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="80dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Voucher"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/voucherIdInput"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:hint="ID" />
+
+    <EditText
+        android:id="@+id/voucherNameInput"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/discountPercentInput"
+        android:layout_width="278dp"
+        android:layout_height="wrap_content"
+        android:hint="Discount Percent"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/dayStartInput"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:hint="Day Start"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/dayEndInput"
+        android:layout_width="277dp"
+        android:layout_height="wrap_content"
+        android:hint="Day End"
+        android:inputType="date" />
+
+    <LinearLayout
+        android:layout_width="265dp"
+        android:layout_height="80dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF5722"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B0BEC5"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="25dp"
+            android:text="Cancel" />
+
+    </LinearLayout> </LinearLayout>
