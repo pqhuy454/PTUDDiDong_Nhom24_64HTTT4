@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:padding="16dp">
+
+        <!-- Nút Back -->
+
+        <!-- Tiêu đề "QUẢN LÝ BÀN" -->
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="74dp"
+            android:layout_height="87dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/transparent"
+            android:text="&lt;"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="QUẢN LÝ BÀN"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- RecyclerView để hiển thị danh sách bàn -->
+
+    <!-- Nút thêm bàn -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTables"
+        android:layout_width="match_parent"
+        android:layout_height="417dp"
+        android:layout_weight="1"
+        android:padding="16dp" />
+
+    <ImageButton
+        android:id="@+id/btnAddTable"
+        android:layout_width="81dp"
+        android:layout_height="94dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Thêm bàn"
+        android:src="@android:drawable/ic_input_add" />
+</LinearLayout>

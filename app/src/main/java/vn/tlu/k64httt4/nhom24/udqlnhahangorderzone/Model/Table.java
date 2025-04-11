@@ -1,6 +1,6 @@
 package vn.tlu.k64httt4.nhom24.udqlnhahangorderzone.Model;
 
-public class ltTable {
+public class Table {
     private String id;
     private String name;
     private int seats;
@@ -8,10 +8,10 @@ public class ltTable {
     private String currentOrderId;
 
     // Constructor rỗng (bắt buộc cho Firestore)
-    public ltTable() {
+    public Table() {
     }
 
-    public ltTable(String id, String name, int seats, String status, String currentOrderId) {
+    public Table(String id, String name, int seats, String status, String currentOrderId) {
         this.id = id;
         this.name = name;
         this.seats = seats;

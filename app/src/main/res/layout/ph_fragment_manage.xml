@@ -33,6 +33,7 @@
 
         <!-- Nút Order -->
         <Button
+            android:id="@+id/btnManageTables"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Quản lý bàn"
@@ -77,6 +78,7 @@
 
         <!-- Nút Mã giảm giá -->
         <Button
+            android:id="@+id/btnManageVouchers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mã giảm giá"
