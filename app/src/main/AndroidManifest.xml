@@ -90,6 +90,9 @@
         <activity
             android:name=".Activity.paPaymentActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activity.PointsActivity"
+            android:exported="false" />
 
         <service
             android:name=".Activity.paMyFirebaseMessagingService"

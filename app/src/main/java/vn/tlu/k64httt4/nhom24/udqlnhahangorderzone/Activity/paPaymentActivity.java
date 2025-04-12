@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,7 +37,7 @@ import java.util.Locale;
 public class paPaymentActivity extends AppCompatActivity {
     private RecyclerView recyclerOrdered;
     private TextView tvTableName, txtPrice;
-    private Button btnThanhToan;
+    private Button btnThanhToan, btnTichDiem;
     private ImageView btnBack;
 
     private String tableId, billId, tableName;
@@ -44,7 +46,20 @@ public class paPaymentActivity extends AppCompatActivity {
     private long totalPrice;
     private FirebaseFirestore db;
     private paUserHelper userHelper;
-    private String userId; // Biến lưu userId
+    private String userId;
+    private boolean pointsSaved = false; // Biến theo dõi trạng thái tích điểm
+
+    // Activity Result Launcher để nhận kết quả từ paPointsActivity
+    private final ActivityResultLauncher<Intent> pointsActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    pointsSaved = result.getData().getBooleanExtra("pointsSaved", false);
+                    if (pointsSaved) {
+                        Toast.makeText(this, "Đã tích điểm cho khách hàng", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +70,7 @@ public class paPaymentActivity extends AppCompatActivity {
         tvTableName = findViewById(R.id.tv_table_nam);
         txtPrice = findViewById(R.id.txtPrice);
         btnThanhToan = findViewById(R.id.btnThanhToan);
+        btnTichDiem = findViewById(R.id.btnTichDiem);
         btnBack = findViewById(R.id.r5mgogsypwwu);
 
         tableId = getIntent().getStringExtra("tableId");
@@ -76,10 +92,16 @@ public class paPaymentActivity extends AppCompatActivity {
 
         btnThanhToan.setOnClickListener(v -> processPayment());
 
-        db = FirebaseFirestore.getInstance();
-        userHelper = new paUserHelper(this); // Khởi tạo userHelper
+        btnTichDiem.setOnClickListener(v -> {
+            Intent intent = new Intent(paPaymentActivity.this, PointsActivity.class);
+            intent.putExtra("totalPrice", totalPrice);
+            pointsActivityResultLauncher.launch(intent);
+        });
 
-        // Kiểm tra xem người dùng đã đăng nhập chưa
+        db = FirebaseFirestore.getInstance();
+        userHelper = new paUserHelper(this);
+
+        // Kiểm tra đăng nhập
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             Toast.makeText(this, "Vui lòng đăng nhập để tiếp tục!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, ttLoginActivity.class);
@@ -89,7 +111,6 @@ public class paPaymentActivity extends AppCompatActivity {
             return;
         }
 
-        // Lấy userId từ Firebase Authentication
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         if (userId == null || userId.trim().isEmpty()) {
             Toast.makeText(this, "Không thể xác định người dùng, vui lòng đăng nhập lại!", Toast.LENGTH_SHORT).show();
@@ -160,18 +181,16 @@ public class paPaymentActivity extends AppCompatActivity {
             return;
         }
 
-        // Sử dụng paUserHelper để lấy email từ Firestore
         userHelper.getUserEmail(userId, new paUserHelper.OnUserLoadedListener() {
             @Override
             public void onLoaded(String email) {
-                // Tiến hành thanh toán với email lấy được
                 paPayment payment = new paPayment();
                 payment.setBillId(billId);
                 payment.setTableId(tableId);
                 payment.setTableName(tableName);
                 payment.setFoodList(foodList);
                 payment.setQuantities(quantities);
-                payment.setOrderPerson(email); // Sử dụng email lấy từ Firestore
+                payment.setOrderPerson(email);
                 payment.setTimestamp(Timestamp.now());
                 payment.setTotalPrice(totalPrice);
 
@@ -186,7 +205,6 @@ public class paPaymentActivity extends AppCompatActivity {
                                 .addOnSuccessListener(aVoid -> {
                                     Toast.makeText(paPaymentActivity.this, "Thanh toán thành công!", Toast.LENGTH_SHORT).show();
 
-                                    // Thêm thông báo thanh toán với senderId là userId
                                     String noticeTitle = "Thanh toán hóa đơn";
                                     String noticeContent = email + " đã thanh toán hóa đơn ID " + billId;
                                     paNoticeHelper noticeHelper = new paNoticeHelper();
