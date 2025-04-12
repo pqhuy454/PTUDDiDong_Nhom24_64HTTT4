@@ -35,10 +35,10 @@ public class phHomeFragment extends Fragment {
         btnPay.setVisibility(View.GONE);
 
         // Gán sự kiện click cho btnOrder
-//        btnOrder.setOnClickListener(v -> {
-//            Intent intent = new Intent(getActivity(), phOrderingTableActivity.class);
-//            startActivity(intent);
-//        });
+        btnOrder.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), phOrderTableActivity.class);
+            startActivity(intent);
+        });
 
         // Gán sự kiện click cho btnPay
         btnPay.setOnClickListener(v -> {

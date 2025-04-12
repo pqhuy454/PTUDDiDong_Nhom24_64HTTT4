@@ -30,6 +30,27 @@
         android:theme="@style/Theme.UDQLNhaHangOrderZone"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.phBillDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.phBillHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.phStatisticalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.phOrderedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.phConfirmOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.phOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.phOrderTableActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ttPersonnelManagementActivity"
             android:exported="false" />
         <activity

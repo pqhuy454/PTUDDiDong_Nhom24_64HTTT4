@@ -93,17 +93,33 @@
 
         <!-- Nút Thống kê -->
         <Button
+            android:id="@+id/btnStatistical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thống kê"
-            android:textSize="18sp"
-            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
-            android:layout_marginBottom="16dp"
+            android:foreground="@drawable/button_border"
             android:padding="12dp"
             android:stateListAnimator="@null"
-            android:foreground="@drawable/button_border" />
+            android:text="Thống kê"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <!-- Nút Lịch sử hóa đơn -->
+        <Button
+            android:id="@+id/btnBillHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:foreground="@drawable/button_border"
+            android:padding="12dp"
+            android:stateListAnimator="@null"
+            android:text="Lịch sử hóa đơn"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>

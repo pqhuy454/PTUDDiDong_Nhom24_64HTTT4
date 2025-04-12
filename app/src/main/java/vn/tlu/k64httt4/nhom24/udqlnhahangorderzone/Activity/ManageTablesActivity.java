@@ -48,11 +48,7 @@ public class ManageTablesActivity extends AppCompatActivity implements ltTableAd
 
         btnAddTable.setOnClickListener(v -> showAddTableDialog());
 
-        backBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(ManageTablesActivity.this, phMainActivity.class);
-            startActivity(intent);
-            finish();
-        });
+        backBtn.setOnClickListener(v -> finish());
     }
 
     private void loadTables() {

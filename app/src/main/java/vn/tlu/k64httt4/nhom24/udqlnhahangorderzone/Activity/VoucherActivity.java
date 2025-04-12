@@ -63,11 +63,7 @@ public class VoucherActivity extends AppCompatActivity {
         findViewById(R.id.addVoucherBtn).setOnClickListener(v -> showAddVoucherDialog());
 
         // Xử lý sự kiện nhấn nút Back
-        backBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(VoucherActivity.this, phMainActivity.class);
-            startActivity(intent);
-            finish();
-        });
+        backBtn.setOnClickListener(v -> finish());
     }
 
     private void loadVouchers() {

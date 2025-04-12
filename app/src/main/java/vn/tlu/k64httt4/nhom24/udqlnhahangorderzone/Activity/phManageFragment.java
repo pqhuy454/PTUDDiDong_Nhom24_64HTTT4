@@ -57,6 +57,17 @@ public class phManageFragment extends Fragment {
             startActivity(intent);
         });
 
+        Button btnStatistical = view.findViewById(R.id.btnStatistical);
+        btnStatistical.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), phStatisticalActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnBillHistory = view.findViewById(R.id.btnBillHistory);
+        btnBillHistory.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), phBillHistoryActivity.class);
+            startActivity(intent);
+        });
 
         return view;
     }
